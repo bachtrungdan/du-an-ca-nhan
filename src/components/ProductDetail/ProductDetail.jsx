@@ -264,12 +264,7 @@ function ProductDetail() {
                 </div>
 
             </div>
-            <div className='detail1-box1-Homecontent'>
-                <div className='detail1-box'>
-                    <button><b>PHỤ KIỆN MUA CÙNG </b></button>
-                    <button><b>SẢN PHẨM TƯƠNG TỰ </b></button>
-                    <button><b>THAM KHẢO THÊM HÀNG CŨ </b></button>
-                </div>
+            <div className='detail1-box1-Homecontent'>         
                 <div className='detail1-box1-Homecont'>
                     <HomeContentSlider__1 />
                 </div>

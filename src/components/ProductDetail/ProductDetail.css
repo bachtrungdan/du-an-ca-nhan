@@ -291,18 +291,6 @@
     padding: 3px;
 }
 
-.detail1-box {
-    margin-left: 40px;
-}
-
-.detail1-box button {
-    margin: 5px 10px;
-    border: 1px solid rgba(0, 0, 0, 0.144);
-    border-radius: 5px;
-    padding: 7px;
-}
-
-
 .detail1-box1 {
     display: flex;
 }

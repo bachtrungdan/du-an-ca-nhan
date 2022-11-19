@@ -18,25 +18,23 @@ function GetAllProduct() {
 
 
 
-  const getdataFilter  =(value)=>{
-    
+  const getdataFilter = (value) => {
+
     // setTimeout(function(){  document.getElementById(`${value}`).classList.add('active__option') },300)
-    if(value == 'caothap'){
-      return  setDataFilter(dataProduct.sort(function(a,b){return a.price - b.price}))
+    if (value == 'caothap') {
+      return setDataFilter(dataProduct.sort(function (a, b) { return a.price - b.price }))
     }
-    if(value == 'thapcao'){
-      return  setDataFilter(dataProduct.sort(function(a,b){return b.price - a.price}))
+    if (value == 'thapcao') {
+      return setDataFilter(dataProduct.sort(function (a, b) { return b.price - a.price }))
     }
-    // if(value == 'all'){
-    //   return setDataFilter(dataProduct)
-    // }
+
     axios.get(`https://shope-b3.thaihm.site/api/product/find-products-by-name?productName=${value}`)
-    .then(value=>{
-      setDataFilter(value.data.products)
-    })
-    .catch(value=>{
-      console.log(value);
-    })
+      .then(value => {
+        setDataFilter(value.data.products)
+      })
+      .catch(value => {
+        console.log(value);
+      })
   }
 
   useEffect(() => {
@@ -50,7 +48,7 @@ function GetAllProduct() {
       .catch(value => {
         console.log(value);
       })
-      getdataFilter(dataparam.get('filter'))
+    getdataFilter(dataparam.get('filter'))
   }, [])
 
 
@@ -59,15 +57,15 @@ function GetAllProduct() {
     return value.brand
   })
   brand = brand.filter((value, index) => brand.indexOf(value) == index)
-  
 
-  
-  const handleFilter =(value)=>{
-    if(document.querySelector('.active__option')){
+
+
+  const handleFilter = (value) => {
+    if (document.querySelector('.active__option')) {
       document.querySelector('.active__option').classList.remove('active__option')
     }
     document.getElementById(`${value}`).classList.add('active__option')
-    setDataparam({filter: value})
+    setDataparam({ filter: value })
     getdataFilter(value)
   }
   return (
@@ -75,10 +73,9 @@ function GetAllProduct() {
 
       <Header></Header>
       <div className="GetAllProduct__content__img">
-          <img src="https://cellphones.com.vn/media/wysiwyg/slide/khai-tr_ng.jpg" alt="" />
-        </div>
+        <img src="https://cellphones.com.vn/media/wysiwyg/slide/khai-tr_ng.jpg" alt="" />
+      </div>
       <div className='GetAllProduct__content'>
-        
         <div className="GetAllProduct__content__slider">
           <HomeContentSlider__1></HomeContentSlider__1>
         </div>
@@ -86,40 +83,36 @@ function GetAllProduct() {
           <h2>Chọn theo loại</h2>
           {brand.map(value => {
             return (
-              <button className='123' id={value} key={value} onClick={function(){handleFilter(value)}}><i class="fa-solid fa-flask-vial"></i><p>{value}</p></button>
+              <button className='123' id={value} key={value} onClick={function () { handleFilter(value) }}><i class="fa-solid fa-flask-vial"></i><p>{value}</p></button>
             )
           })}
-
-
 
         </div>
         <div className="GetAllProduct__content__slider__option">
           <h2>Sắp xếp theo</h2>
-          <button className='123' id='caothap' onClick={function(){handleFilter('caothap')}}><i class="fa-solid fa-arrow-down-wide-short"></i><p>Giá cao - thấp</p></button>
-          <button className='123' id='thapcao'  onClick={function(){handleFilter('thapcao')}}> <i class="fa-solid fa-arrow-down-short-wide"></i><p>Giá thấp - cao</p></button>
-          {/* <button className='123 active__option' id='all'  onClick={function(){handleFilter('all')}}> <i class="fa-solid fa-eye"></i><p>Xem nhiều</p></button> */}
-
+          <button className='123' id='caothap' onClick={function () { handleFilter('caothap') }}><i class="fa-solid fa-arrow-down-wide-short"></i><p>Giá cao - thấp</p></button>
+          <button className='123' id='thapcao' onClick={function () { handleFilter('thapcao') }}> <i class="fa-solid fa-arrow-down-short-wide"></i><p>Giá thấp - cao</p></button>
         </div>
         <div className="home__content__list2__cart">
-          { (dataFilter.length >  0 ? dataFilter : dataProduct).map(value => {
+          {(dataFilter.length > 0 ? dataFilter : dataProduct).map(value => {
             let img = `https://shope-b3.thaihm.site/${value.thumbnail}`
             return (
-             <LazyLoad >
-              <div key={value._id}>
-               <Link to={`/ProductDetail/${value._id}`}>
-                <div  className="home__content__list__cart">
-                  <div className="home__content__list__cart__img"><img src={img} alt="" /></div>
-                  <h3>{value.productName}</h3>
-                  <p className='home__content__list__cart__price'>{(value.price * 1).toLocaleString('vi', { style: 'currency', currency: 'VND' })}</p>
-                  <div className="home__content__list__cart__sale">
-                    Nhập mã CPSONL500 khi thanh toán VNPAY qua website hoặc CPS500 qua QR Offline tại cửa hàng để giảm thêm 500k khi mua sản phẩm Apple từ 17 triệu và
-                  </div>
-                  <div className='home__content__list__cart__star'> <i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i></div>
-                  <div className='home__content__list__cart__Fav'><p>Yêu thích </p><i className="fa-regular fa-heart"></i></div>
+              <LazyLoad >
+                <div key={value._id}>
+                  <Link to={`/ProductDetail/${value._id}`}>
+                    <div className="home__content__list__cart">
+                      <div className="home__content__list__cart__img"><img src={img} alt="" /></div>
+                      <h3>{value.productName}</h3>
+                      <p className='home__content__list__cart__price'>{(value.price * 1).toLocaleString('vi', { style: 'currency', currency: 'VND' })}</p>
+                      <div className="home__content__list__cart__sale">
+                        Nhập mã CPSONL500 khi thanh toán VNPAY qua website hoặc CPS500 qua QR Offline tại cửa hàng để giảm thêm 500k khi mua sản phẩm Apple từ 17 triệu và
+                      </div>
+                      <div className='home__content__list__cart__star'> <i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i></div>
+                      <div className='home__content__list__cart__Fav'><p>Yêu thích </p><i className="fa-regular fa-heart"></i></div>
+                    </div>
+                  </Link>
                 </div>
-              </Link>
-             </div>
-             </LazyLoad>
+              </LazyLoad>
             )
           })}
         </div>

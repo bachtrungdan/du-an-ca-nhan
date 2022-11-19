@@ -27,7 +27,7 @@ function Home() {
     <div className='App'>
       <Header></Header>
       
-      <div className="component__banner"><Banner></Banner></div>
+     <div className="component__banner"><Banner></Banner></div>
      <div className="components__homecontent"> {  <HomeContent></HomeContent>}</div>
      <div className="components_footer"> <Footer></Footer></div>
     <button onClick={top} id='back-to-top'><i class="fa-solid fa-chevron-up"></i></button> 

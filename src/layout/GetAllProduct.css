@@ -4,10 +4,6 @@
     box-sizing: border-box;
 }
 
-/* .GetAllProduct{
-    max-width: 1200px;
-    margin: 0 auto;
-} */
 .GetAllProduct__content{
     max-width: 1200px;
     margin: 0 auto;
@@ -57,9 +53,6 @@
     font-size: 18px;
     margin-bottom: 10px
 }
-
-
-
 
 
 .GetAllProduct__content__slider__option1 button{

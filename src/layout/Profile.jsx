@@ -8,7 +8,6 @@ import axios from 'axios'
 
 
 function Profile() {
-  const nav = useNavigate()
   let param = useParams().profile
   const [paramData, setParamData] = useState()
   let token  = window.localStorage.getItem('token')

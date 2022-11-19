@@ -24,22 +24,19 @@ function App() {
   useEffect(() => {
     axios.get('https://shope-b3.thaihm.site/api/product/get-all-products', {
       headers: {
-          Authorization: `Bearer ${token}`
+        Authorization: `Bearer ${token}`
       }
-  }).then(value => {
+    }).then(value => {
       setTimeout(() => {
-      dispatch(removeloading(false))
-    }, 1000);
-  })
+        dispatch(removeloading(false))
+      }, 500);
+    })
       .catch(value => {
-          console.log(value);
+        console.log(value);
       })
-   
-    
   })
 
   return (
-
     <BrowserRouter>
       <Routes>
         <Route path='ProductDetail/:nameProductDetail' element={< DataProductDetail />}></Route>
@@ -50,7 +47,7 @@ function App() {
           <div class="container">
             <div class="row">
               <div class="col-md-12 text-center">
-                <h3 class="animate-charcter">aheangoijaen</h3>
+                <h3 class="animate-charcter">Bạch Đàn</h3>
               </div>
             </div>
           </div>

@@ -58,9 +58,8 @@ function SignUp() {
 
 
     return (
-        <div>  <Header></Header>
-
-
+        <div> 
+             <Header></Header>
             <div className='signup'>
 
                 <div className='img__up'>
@@ -68,10 +67,7 @@ function SignUp() {
                 </div>
                 <div class="login-form__title">Đăng Ký Tài Khoản</div>
 
-
-
-
-                <Form className='tung123' {...layout} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}>
+                <Form className='singUp1' {...layout} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}>
                     <Form.Item
 
                         name='email'

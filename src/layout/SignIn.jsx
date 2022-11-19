@@ -52,19 +52,13 @@ function SignIn() {
         })
     };
     return (
-        <div>  
-
-
+        <div>
             <div className='signup'>
 
                 <div className='img__up'>
                     <img style={{ width: "300px" }} src="https://cellphones.com.vn/smember/_nuxt/img/Shipper_CPS3.0251fdd.png" alt="" />
                 </div>
                 <h1 class="login-form__title">BẮT ĐẦU MUA HÀNG VỚI CELLPHONES</h1>
-
-
-
-
                 <Form className='tung123' {...layout} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}>
                     <Form.Item
 
@@ -111,8 +105,6 @@ function SignIn() {
                 </Form>
             </div>
         </div>
-
-
     )
 }
 
