@@ -8,7 +8,7 @@ import {
     ClockCircleOutlined ,
     HomeOutlined 
   } from '@ant-design/icons';
- import './SSS.css'
+ import './Banner.css'
  import { Col, Row } from 'antd';
 function Banner() {
   const [isShowMegaMenu, setShowMegaMenu] = useState(false)
@@ -80,18 +80,18 @@ function Banner() {
     {id:6,thumb:'https://cdn2.cellphones.com.vn/690x300/https://dashboard.cellphones.com.vn/storage/tivi-toshiba-sliidng.png', p:'MỞ BÁN TV TOSHIBA', br:'Giá rẻ quà ngon'},
   ]
 
-//   let index =0
-//   setInterval(() => {
-//     let img = document.querySelectorAll('.banner__contact-img')
-//    for(let i=0;i<img.length;i++){
-//     img[i].setAttribute('style','display:none')
-//    }
-//    index++
-//    if(index > img.length){
-//     index =1
-//    }
-//    img[index-1].setAttribute('style','display:block')
-// }, 3000);
+  let index =0
+  setInterval(() => {
+    let img = document.querySelectorAll('.banner__contact-img')
+   for(let i=0;i<img.length;i++){
+    img[i].setAttribute('style','display:none')
+   }
+   index++
+   if(index > img.length){
+    index =1
+   }
+   img[index-1].setAttribute('style','display:block')
+}, 3000);
 const handleChangeCart1 = (e) => {
   const widthItem = document.querySelector('.slider__img').offsetWidth + 12;
   console.log(widthItem)

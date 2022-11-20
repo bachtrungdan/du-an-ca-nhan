@@ -70,7 +70,6 @@ function GetAllProduct() {
   }
   return (
     <div className='GetAllProduct'>
-
       <Header></Header>
       <div className="GetAllProduct__content__img">
         <img src="https://cellphones.com.vn/media/wysiwyg/slide/khai-tr_ng.jpg" alt="" />

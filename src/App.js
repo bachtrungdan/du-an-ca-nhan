@@ -13,6 +13,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { removeloading } from './redux-toolkit/loading';
 import axios from 'axios';
+import My from './my/My'
 
 function App() {
 
@@ -39,6 +40,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+      <Route path='my' element={<My/>}></Route>
         <Route path='ProductDetail/:nameProductDetail' element={< DataProductDetail />}></Route>
         <Route path='card' element={<IndexPrivate><CardProduct></CardProduct></IndexPrivate>}></Route>
         <Route path='' element={<Home></Home>}></Route>
