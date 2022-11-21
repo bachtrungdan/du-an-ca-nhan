@@ -47,6 +47,7 @@ function HomeContentSlider__1() {
             clearInterval(A)
         }
     }, [])
+
     return (
         <div>
             <div className='home__content'>

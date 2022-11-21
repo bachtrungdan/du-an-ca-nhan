@@ -3,7 +3,7 @@ import '../my/my.css'
 
 function My() {
     return (
-        <div>  bah trung dan
+        <div>
             <div class="box">
                 <span >
                     <img src="/accset/img/181095-gia-dinh.jpg" />

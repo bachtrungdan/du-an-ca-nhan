@@ -29,7 +29,7 @@ function App() {
     }).then(value => {
       setTimeout(() => {
         dispatch(removeloading(false))
-      }, 1000);
+      },1000);
     })
       .catch(value => {
         console.log(value);
