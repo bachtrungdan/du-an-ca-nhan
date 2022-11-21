@@ -45,6 +45,7 @@
     border-radius: 10px;
     object-fit: cover;
     transition: 2s;
+    opacity: 30px;
 }
 
 .box span:hover img {

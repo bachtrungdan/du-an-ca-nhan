@@ -16,7 +16,6 @@ import axios from 'axios';
 import My from './my/My'
 
 function App() {
-
   let load = useSelector(function (state) {
     return state.loading
   })
@@ -30,13 +29,12 @@ function App() {
     }).then(value => {
       setTimeout(() => {
         dispatch(removeloading(false))
-      }, 500);
+      }, 1000);
     })
       .catch(value => {
         console.log(value);
       })
   })
-
   return (
     <BrowserRouter>
       <Routes>
